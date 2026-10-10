@@ -25,7 +25,7 @@ churches.forEach(([name],i)=>{
   const card=document.createElement("article");card.className="card";
   const number=document.createElement("span");number.className="card-number";number.textContent=`CONGREGACIÓN ${String(i+1).padStart(2,"0")}`;
   const heading=document.createElement("h3");heading.textContent=name;
-  card.append(number,heading);churchList.append(card);
+  const link=document.createElement("a");link.className="card-link";link.href=`iglesias.html?iglesia=${encodeURIComponent(churches[i][1])}`;link.textContent="Ver orden de culto →";card.append(number,heading,link);churchList.append(card);
 });
 const visitList=document.querySelector("#visit-list");
 visitOrder.forEach((name,i)=>{
