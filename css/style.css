@@ -203,3 +203,366 @@
     transition: none;
   }
 }
+
+
+/* =========================================
+   LVD - TRES TEMAS GENERALES DEL PORTAL
+   ========================================= */
+
+/* Tema 1: Azul imperial y dorado (original) */
+:root,
+html[data-theme="imperial"] {
+  --navy: #101b30;
+  --navy2: #192b44;
+  --gold: #d3ae70;
+  --cream: #f8f6f1;
+  --ink: #192638;
+  --muted: #657184;
+
+  --theme-hero-start: #101b30;
+  --theme-hero-end: #263b59;
+  --theme-link: #80591e;
+  --theme-hover: #f2d29b;
+  --theme-soft: #fff7ea;
+  --theme-soft-border: #eee0c9;
+  --theme-selected: #b88d4a;
+  --theme-badge: #fff0d6;
+  --theme-badge-text: #8b6018;
+}
+
+/* Tema 2: Verde esmeralda y champán */
+html[data-theme="esmeralda"] {
+  --navy: #123d36;
+  --navy2: #20554a;
+  --gold: #d8bb82;
+  --cream: #f1f5f0;
+  --ink: #20342f;
+  --muted: #63766f;
+
+  --theme-hero-start: #123d36;
+  --theme-hero-end: #286052;
+  --theme-link: #326b56;
+  --theme-hover: #eddbb2;
+  --theme-soft: #eef8f1;
+  --theme-soft-border: #cce6d5;
+  --theme-selected: #3c876c;
+  --theme-badge: #e2f2e6;
+  --theme-badge-text: #276444;
+}
+
+/* Tema 3: Borgoña y oro rosa */
+html[data-theme="borgona"] {
+  --navy: #482737;
+  --navy2: #633849;
+  --gold: #e2b6a5;
+  --cream: #f9f1f3;
+  --ink: #392832;
+  --muted: #786873;
+
+  --theme-hero-start: #482737;
+  --theme-hero-end: #744456;
+  --theme-link: #934d67;
+  --theme-hover: #f2d5ca;
+  --theme-soft: #fff0f3;
+  --theme-soft-border: #edcdd6;
+  --theme-selected: #a75e79;
+  --theme-badge: #f7e3e9;
+  --theme-badge-text: #83405a;
+}
+
+/* Transiciones suaves */
+body,
+.site-header,
+footer,
+.section.alt,
+.hero,
+.subhero,
+.button,
+.visit-index,
+.step-number {
+  transition:
+    background-color .3s ease,
+    color .3s ease,
+    border-color .3s ease;
+}
+
+/* Encabezado, fondos y botones */
+html[data-theme] .site-header,
+html[data-theme] footer {
+  background: var(--navy);
+}
+
+html[data-theme] .section.alt {
+  background: var(--cream);
+}
+
+html[data-theme] .hero {
+  background:
+    linear-gradient(
+      125deg,
+      var(--theme-hero-start),
+      var(--theme-hero-end)
+    );
+}
+
+html[data-theme] .subhero {
+  background:
+    linear-gradient(
+      115deg,
+      var(--theme-hero-start),
+      var(--theme-hero-end)
+    );
+}
+
+html[data-theme] .button:not(.secondary) {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+html[data-theme] .button:not(.secondary):hover {
+  background: var(--theme-hover);
+}
+
+html[data-theme] .nav a:hover,
+html[data-theme] .nav a:focus-visible,
+html[data-theme] .nav a.active {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Tarjetas generales e iglesias */
+html[data-theme] .card:not(.lvd-member-card) {
+  border-color: var(--theme-soft-border);
+}
+
+html[data-theme] .card:not(.lvd-member-card) .card-number {
+  color: var(--theme-link);
+}
+
+html[data-theme] .card-link {
+  color: var(--theme-link);
+}
+
+html[data-theme] .card-link:hover {
+  color: var(--navy);
+}
+
+html[data-theme] .church-card.is-selected {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--theme-soft-border);
+}
+
+html[data-theme] .search-input:focus {
+  border-color: var(--theme-selected);
+  box-shadow: 0 0 0 3px var(--theme-soft-border);
+}
+
+/* Visitas */
+html[data-theme] .visit-index,
+html[data-theme] .step-number {
+  background: var(--navy);
+  color: var(--gold);
+}
+
+html[data-theme] .visit .status {
+  background: var(--theme-badge);
+  color: var(--theme-badge-text);
+}
+
+/* Calendario */
+html[data-theme] .calendar-head button,
+html[data-theme] #contenido .calendar-head button {
+  background: var(--navy);
+  color: var(--gold);
+}
+
+html[data-theme] .calendar-day:hover,
+html[data-theme] #contenido .calendar-day:hover {
+  border-color: var(--theme-selected);
+  background: var(--theme-soft);
+}
+
+html[data-theme] .calendar-day.selected,
+html[data-theme] #contenido .calendar-day.selected {
+  outline-color: var(--theme-selected);
+  background: var(--theme-soft);
+}
+
+html[data-theme] .day-dot,
+html[data-theme] #contenido .day-dot {
+  background: var(--theme-selected);
+}
+
+html[data-theme] #contenido .stat strong {
+  color: var(--navy);
+}
+
+html[data-theme] #contenido .toolbar {
+  background: var(--cream);
+  border-color: var(--theme-soft-border);
+}
+
+html[data-theme] .day-event {
+  background: var(--theme-soft);
+  border-color: var(--theme-soft-border);
+}
+
+html[data-theme] .cycle-actions .pending {
+  background: var(--theme-badge);
+  color: var(--theme-badge-text);
+}
+
+html[data-theme] .calendar-day:focus-visible,
+html[data-theme] .cycle-actions button:focus-visible {
+  outline-color: var(--theme-selected);
+}
+
+/* =========================================
+   SELECTOR DE TEMAS
+   ========================================= */
+
+.lvd-theme-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.lvd-theme-trigger {
+  appearance: none;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  padding: .7rem 1rem;
+  font: inherit;
+  font-size: .88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lvd-theme-trigger:hover,
+.lvd-theme-trigger:focus-visible {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.lvd-theme-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 100;
+  width: min(310px, 90vw);
+  padding: 14px;
+  background: #fff;
+  color: #192638;
+  border: 1px solid #e2e6ec;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .18);
+  text-align: left;
+}
+
+.lvd-theme-menu[hidden] {
+  display: none !important;
+}
+
+.lvd-theme-menu-title {
+  display: block;
+  margin: 0 0 12px;
+  color: #192638;
+  font-size: .95rem;
+}
+
+.lvd-theme-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background: white;
+  color: #192638;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lvd-theme-option:hover,
+.lvd-theme-option:focus-visible {
+  background: #f2f4f7;
+}
+
+.lvd-theme-option[aria-pressed="true"] {
+  border-color: var(--theme-selected);
+  background: var(--theme-soft);
+}
+
+.lvd-theme-swatches {
+  display: flex;
+  flex: none;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.lvd-theme-swatches span {
+  display: block;
+  width: 20px;
+  height: 28px;
+}
+
+.lvd-theme-option-label {
+  flex: 1;
+  font-size: .85rem;
+  font-weight: 650;
+}
+
+.lvd-theme-check {
+  font-weight: 900;
+  color: var(--theme-link);
+}
+
+/* En pantallas pequeñas */
+@media (max-width: 600px) {
+  .lvd-theme-control {
+    position: static;
+  }
+
+  .lvd-theme-menu {
+    position: fixed;
+    top: auto;
+    bottom: 20px;
+    left: 5vw;
+    right: 5vw;
+    width: 90vw;
+    max-height: 65vh;
+    overflow-y: auto;
+  }
+
+  .lvd-theme-trigger {
+    padding: .65rem .75rem;
+    font-size: .8rem;
+  }
+}
+
+/* No modificar los colores de integrantes */
+#integrantes .lvd-member-card {
+  color: #14233b;
+}
+
+#integrantes .lvd-member-card h3 {
+  color: #14233b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .site-header,
+  footer,
+  .section.alt,
+  .hero,
+  .subhero,
+  .button,
+  .visit-index,
+  .step-number {
+    transition: none;
+  }
+}
