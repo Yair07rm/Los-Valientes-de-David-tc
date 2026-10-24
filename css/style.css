@@ -36,3 +36,170 @@
 #contenido .file-label input{max-width:100%;font-size:.8rem}
 @media(max-width:850px){#contenido .calendar-layout{grid-template-columns:1fr}}
 @media(max-width:600px){#contenido .stats{gap:8px}#contenido .stat{padding:14px 9px}#contenido .stat span{font-size:.7rem}#contenido .calendar-shell,#contenido .day-panel{padding:14px}#contenido .calendar-grid{gap:3px}#contenido .calendar-day{min-height:48px;padding:5px;border-radius:6px}#contenido .calendar-blank{min-height:48px}}
+
+
+/* ========================================
+   INTEGRANTES LVD - TARJETAS INTERACTIVAS
+   ======================================== */
+
+#integrantes #member-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+#integrantes .lvd-member-card {
+  --member-color: #3974c8;
+  --member-light: #e6f0ff;
+
+  border: 1px solid var(--member-color);
+  border-top: 7px solid var(--member-color);
+  border-radius: 18px;
+  padding: 22px;
+  background: #ffffff;
+  color: #14233b;
+  box-shadow: 0 6px 20px rgba(12, 29, 54, .07);
+  transition: transform .25s ease, box-shadow .25s ease;
+  overflow: hidden;
+}
+
+#integrantes .lvd-member-card:nth-child(1) {
+  --member-color: #3974c8;
+  --member-light: #e6f0ff;
+}
+
+#integrantes .lvd-member-card:nth-child(2) {
+  --member-color: #649e53;
+  --member-light: #eaf6e4;
+}
+
+#integrantes .lvd-member-card:nth-child(3) {
+  --member-color: #009e94;
+  --member-light: #e0f7f3;
+}
+
+#integrantes .lvd-member-card:nth-child(4) {
+  --member-color: #ba8740;
+  --member-light: #fff3de;
+}
+
+#integrantes .lvd-member-card:nth-child(5) {
+  --member-color: #8063b7;
+  --member-light: #f0eafa;
+}
+
+#integrantes .lvd-member-card:hover,
+#integrantes .lvd-member-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(12, 29, 54, .15);
+}
+
+#integrantes .lvd-member-card .card-number {
+  display: inline-block;
+  padding: 8px 13px;
+  background: var(--member-light);
+  color: var(--member-color);
+  border-radius: 10px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+#integrantes .lvd-member-card h3 {
+  margin: 18px 0;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #14233b;
+}
+
+#integrantes .lvd-member-details {
+  border-top: 1px solid #e3e8ef;
+  padding-top: 15px;
+}
+
+#integrantes .lvd-member-details summary {
+  cursor: pointer;
+  color: var(--member-color);
+  font-weight: 700;
+  padding: 8px 0;
+  line-height: 1.5;
+}
+
+#integrantes .lvd-member-details summary:focus-visible {
+  outline: 3px solid var(--member-color);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+#integrantes .lvd-member-functions {
+  margin-top: 14px;
+  padding: 16px;
+  background: var(--member-light);
+  border-radius: 12px;
+  font-size: .92rem;
+  line-height: 1.75;
+  color: #223047;
+}
+
+#integrantes .lvd-member-functions p {
+  margin: 0 0 12px;
+}
+
+#integrantes .lvd-member-functions p:last-child {
+  margin-bottom: 0;
+}
+
+/* Despliegue al pasar el cursor */
+@media (hover: hover) and (pointer: fine) {
+  #integrantes .lvd-member-details:not([open]):hover
+  .lvd-member-functions {
+    display: block;
+  }
+}
+
+/* Botón de cambio de colores */
+#integrantes .lvd-theme-button {
+  margin-top: 18px;
+  cursor: pointer;
+}
+
+/* Tema alternativo */
+#integrantes.lvd-colorido {
+  background: linear-gradient(
+    135deg,
+    #eaf1ff 0%,
+    #f6efff 50%,
+    #fff3e4 100%
+  );
+}
+
+#integrantes.lvd-colorido .lvd-member-card {
+  background: var(--member-light);
+  border-width: 2px;
+  border-top-width: 8px;
+}
+
+#integrantes.lvd-colorido .lvd-member-functions {
+  background: #ffffff;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+  #integrantes #member-list {
+    grid-template-columns: 1fr;
+  }
+
+  #integrantes .lvd-member-card {
+    padding: 18px;
+  }
+
+  #integrantes .lvd-member-card:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #integrantes .lvd-member-card {
+    transition: none;
+  }
+}
